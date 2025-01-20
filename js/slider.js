@@ -18,7 +18,6 @@ function rollSlidderNext() {
     buttonNext.style.display = "none";
     return;
   }
-  buttonNext.style.display = "flex";
   buttonPrev.style.display = "flex";
 }
 function rollSlidderPrev() {
@@ -29,7 +28,6 @@ function rollSlidderPrev() {
     return;
   }
   buttonNext.style.display = "flex";
-  buttonPrev.style.display = "flex";
 }
 
 window.addEventListener("resize", init);
