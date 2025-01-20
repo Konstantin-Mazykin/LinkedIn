@@ -1117,12 +1117,12 @@ ul {
 
 .join-us__title {
   margin-bottom: 24px;
+  margin-right: 16px;
 }
 
 @media (width > 768px) {
   .join-us__title {
-    margin-top: 48px;
-    margin-bottom: 16px;
+    margin: 48px 0 16px 0;
   }
 }
 
@@ -1253,7 +1253,7 @@ ul {
   }
 }
 
-/* __________ */
+/* Footer legal information */
 
 .footer__logo-small {
   display: flex;
@@ -1284,11 +1284,9 @@ ul {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
-  /* padding: 8px 0; */
 }
 
 .footer__legal-links {
-  /* height: 252px; */
   font-size: 12px;
   font-weight: 600;
   line-height: 1.5;
