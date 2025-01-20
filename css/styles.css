@@ -358,9 +358,15 @@ ul {
 .general__link-list {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   gap: 16px;
   margin-bottom: 24px;
+}
+
+@media (width > 768px) {
+  .general__link-list {
+    align-items: start;
+  }
 }
 
 .general-link {
@@ -1101,7 +1107,7 @@ ul {
   margin: 0 16px;
 }
 
-@media (width > 1128px) {
+@media (width > 992px) {
   .join-us__container {
     margin-left: auto;
     margin-right: auto;
@@ -1117,7 +1123,6 @@ ul {
 
 .join-us__title {
   margin-bottom: 24px;
-  margin-right: 16px;
 }
 
 @media (width > 768px) {
