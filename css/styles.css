@@ -1110,7 +1110,7 @@ ul {
 @media (width > 768px) {
   .join-us__container {
     height: 840px;
-    padding: 60px 0;
+    padding-top: 108px;
   }
 }
 
