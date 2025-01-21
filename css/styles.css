@@ -732,7 +732,7 @@ ul {
 .share__slider-line {
   display: flex;
   width: calc(100% * 3);
-  transition: all ease 1s;
+  transition: all ease 0.5s;
 }
 
 .share__card {
