@@ -1089,7 +1089,8 @@ ul {
 
 /* Join us */
 .join-us {
-  padding: 56px 0;
+  padding: 56px 16px;
+  background-image: none;
 }
 
 @media (width > 768px) {
@@ -1104,14 +1105,6 @@ ul {
 .join-us__container {
   height: auto;
   padding: 0;
-  margin: 0 16px;
-}
-
-@media (width > 992px) {
-  .join-us__container {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media (width > 768px) {
@@ -1123,12 +1116,6 @@ ul {
 
 .join-us__title {
   margin-bottom: 24px;
-}
-
-@media (width > 768px) {
-  .join-us__title {
-    margin: 48px 0 16px 0;
-  }
 }
 
 @media (width > 992px) {

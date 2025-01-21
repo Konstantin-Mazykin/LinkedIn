@@ -2,27 +2,36 @@ const sliderItems = document.querySelectorAll(".share-slider .share__slider-line
 const sliderLine = document.querySelector(".share__slider-line");
 const buttonNext = document.querySelector(".button-next");
 const buttonPrev = document.querySelector(".button-prev");
+
 let count = 0;
+let positionX = null;
 
 let width = document.querySelector(".share-slider").offsetWidth;
 buttonPrev.style.display = "none";
 
 function init() {
   width = document.querySelector(".share-slider").offsetWidth;
+  rollSlidder();
+}
+
+function rollSlidder() {
+  sliderLine.style.transform = "translate(-" + count * width + "px)";
 }
 
 function rollSlidderNext() {
+  if (count == sliderItems.length - 1) return;
   count++;
-  sliderLine.style.transform = "translate(-" + count * width + "px)";
+  rollSlidder();
   if (count == sliderItems.length - 1) {
     buttonNext.style.display = "none";
     return;
   }
   buttonPrev.style.display = "flex";
 }
+
 function rollSlidderPrev() {
   count--;
-  sliderLine.style.transform = "translate(-" + count * width + "px)";
+  rollSlidder();
   if (count == 0) {
     buttonPrev.style.display = "none";
     return;
@@ -30,7 +39,26 @@ function rollSlidderPrev() {
   buttonNext.style.display = "flex";
 }
 
+function handleTouchStart(event) {
+  positionX = event.touches[0].clientX;
+  console.log(positionX);
+}
+
+function handleTouchMove(event) {
+  if (!positionX) return;
+  let offset = event.touches[0].clientX;
+  if (offset < positionX) {
+    rollSlidderNext();
+  } else {
+    rollSlidderPrev();
+  }
+  positionX = null;
+}
+
 window.addEventListener("resize", init);
 
 buttonNext.addEventListener("click", rollSlidderNext);
 buttonPrev.addEventListener("click", rollSlidderPrev);
+
+sliderLine.addEventListener("touchstart", handleTouchStart);
+sliderLine.addEventListener("touchmove", handleTouchMove);
