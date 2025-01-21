@@ -41,12 +41,13 @@ function rollSlidderPrev() {
 
 function handleTouchStart(event) {
   positionX = event.touches[0].clientX;
-  console.log(positionX);
 }
 
 function handleTouchMove(event) {
   if (!positionX) return;
   let offset = event.touches[0].clientX;
+  if (Math.abs(positionX - offset) < 50) return;
+
   if (offset < positionX) {
     rollSlidderNext();
   } else {
